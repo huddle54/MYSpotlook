@@ -1,0 +1,40 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-spotlook-staging-40927-authRole",
+      "UnauthRoleArn": "arn:aws:iam::888377472267:role/amplify-spotlook-staging-40927-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::888377472267:role/amplify-spotlook-staging-40927-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-spotlook-staging-40927-deployment",
+      "UnauthRoleName": "amplify-spotlook-staging-40927-unauthRole",
+      "StackName": "amplify-spotlook-staging-40927",
+      "StackId": "arn:aws:cloudformation:us-west-2:888377472267:stack/amplify-spotlook-staging-40927/ce4817c0-5d88-11ed-836f-0a99387ede37",
+      "AmplifyAppId": "d2p8suh6nbcih0"
+    },
+    "categories": {
+      "api": {
+        "spotlook": {}
+      },
+      "storage": {
+        "Spotlook": {}
+      },
+      "auth": {
+        "Spotlook": {}
+      },
+      "analytics": {
+        "Pinpoint": {
+          "Name": "spotlook-staging",
+          "Id": "f211b4c540d84f85a7acf6faa1c32320",
+          "Region": "us-west-2"
+        }
+      },
+      "notifications": {
+        "Pinpoint": {
+          "Name": "spotlook-staging",
+          "Id": "f211b4c540d84f85a7acf6faa1c32320",
+          "Region": "us-west-2"
+        }
+      }
+    }
+  }
+}

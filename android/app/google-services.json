@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "69554470013",
+    "project_id": "spotlookapp-f6411",
+    "storage_bucket": "spotlookapp-f6411.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69554470013:android:df74f0b7569a7dc28b8514",
+        "android_client_info": {
+          "package_name": "com.spotlook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69554470013-vsbfi6tuold3ccoqjk23rps55qv6neid.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spotlook",
+            "certificate_hash": "69c6e2c6b43479a9bca833e889da34683da66392"
+          }
+        },
+        {
+          "client_id": "69554470013-c8kkas29cn2l6qk8hqi4oqgu4cul8itr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_Sd_8h0_iUiFLCdzUEglisBR2pQFm3lQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69554470013-c8kkas29cn2l6qk8hqi4oqgu4cul8itr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

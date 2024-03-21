@@ -1,0 +1,14 @@
+{
+  "resourceName": "Spotlook",
+  "policyUUID": "c4865095",
+  "bucketName": "spotlookc87e62bd84c04be2a48d17b526557214",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

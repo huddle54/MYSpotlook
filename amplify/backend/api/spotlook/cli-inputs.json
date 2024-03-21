@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "spotlook",
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 40,
+      "apiKeyExpirationDate": "2024-03-04T07:08:27.828Z",
+      "keyDescription": "spotlook"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": []
+  }
+}

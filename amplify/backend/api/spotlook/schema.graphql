@@ -1,0 +1,95 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY {
+  globalAuthRule: AuthRule = { allow: public }
+} # FOR TESTING ONLY!
+type User @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  username: String!
+  name: String!
+  image: String
+  email: String!
+  bio: String!
+  posts: [Post] @hasMany(indexName: "byUser", fields: ["id"])
+  following: [Following]
+    @hasMany(indexName: "followingByUserId", fields: ["id"])
+  blockedBy: [Block] @hasMany(indexName: "blockedBy", fields: ["id"])
+  blockedUsers: [Block] @hasMany(indexName: "blockedUsers", fields: ["id"])
+  Messages: [Message] @hasMany(indexName: "byUser", fields: ["id"])
+  ChatRooms: [ChatRoom] @manyToMany(relationName: "UserChatRoom")
+}
+
+type ChatRoom @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String
+  image: String
+  Messages: [Message] @hasMany(indexName: "byChatRoom", fields: ["id"])
+  users: [User] @manyToMany(relationName: "UserChatRoom")
+  LastMessage: Message @hasOne
+}
+
+type Message @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  createdAt: AWSDateTime!
+  text: String!
+  chatroomID: ID!
+    @index(
+      name: "byChatRoom"
+      sortKeyFields: ["createdAt"]
+      queryField: "listMessagesByChatRoom"
+    )
+  userID: ID! @index(name: "byUser")
+  images: String
+  TTL: Int
+}
+
+type Block @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  userID: ID! @index(name: "blockedBy", sortKeyFields: ["blockedUserID"])
+  blockedUserID: ID! @index(name: "blockedUsers", sortKeyFields: ["userID"])
+  user: User! @hasOne(fields: ["userID"])
+  blockedUser: User! @hasOne(fields: ["blockedUserID"])
+  createdAt: String!
+}
+
+type Following @model @auth(rules: [{ allow: public }]) {
+  id: ID
+  followerID: ID! @index(name: "followingByUserId")
+  followingID: ID!
+  follower: User! @hasOne(fields: ["followerID"])
+  following: User! @belongsTo(fields: ["followingID"])
+  createdAt: String!
+}
+
+type Post @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  content: String!
+  image: String
+  userID: ID! @index(name: "byUser")
+  username: String!
+  name: String!
+  user: User @belongsTo(fields: ["userID"])
+  likes: [Like] @hasMany(indexName: "byPost", fields: ["id"])
+  comments: [Comment] @hasMany(indexName: "byComment", fields: ["id"])
+}
+
+type Like @model(queries: null) @auth(rules: [{ allow: public }]) {
+  id: ID!
+  userID: ID! @index(name: "byUser", sortKeyFields: ["postID"])
+  postID: ID! @index(name: "byPost", sortKeyFields: ["userID"])
+  user: User! @hasOne(fields: ["userID"])
+  post: Post! @belongsTo(fields: ["postID"])
+}
+
+type Comment @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  postID: ID! @index(name: "byComment", sortKeyFields: ["userID"])
+  userID: ID!
+  text: String!
+  username: String!
+  name: String!
+  image: String
+  user: User! @hasOne(fields: ["userID"])
+  post: Post! @belongsTo(fields: ["postID"])
+}
+             
