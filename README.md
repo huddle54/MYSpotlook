@@ -1,5 +1,7 @@
 # Spotlook
 
+![image alt]()
+
 Explore the world from here. Let's connect with your favorite and loved ones.
 
 The social media app is designed to bring people together in a seamless and intuitive way. With a sleek and modern design, the app features four main functions: post, camera, search, and chat.
