@@ -1,6 +1,6 @@
 # Spotlook
 
-![image alt]()
+![image alt](https://github.com/huddle54/MYSpotlook/blob/f0891a1f72b1b768adcd545d6de320b447e09ad7/assets/1.jpg)
 
 Explore the world from here. Let's connect with your favorite and loved ones.
 
